@@ -4,7 +4,7 @@ from django.http import Http404
 from inventory.models import Item
 
 def index(request):
-  items = Item.objects.excude(amount=0)
+  items = Item.objects.exclude(amount=0)
   return render(request, 'inventory/index.html', {
     'items': items,
     })
